@@ -10,10 +10,12 @@ Generate the communication options for a target resource. Core module of the [ma
 
 ## Usage
 
+The following example generates OPTIONS for every HTTP resource (GET /, GET /:name and POST /) and describe the communication options for each of them.
+
 ```js
 const options = require('manner-options')
 
-options({
+const service = options({
   get: {
     '/': () => {},
     '/:name': () => {}
@@ -21,7 +23,6 @@ options({
   post: () => {}
 })
 ```
-
 
 ## Installation
 
