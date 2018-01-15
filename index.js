@@ -45,15 +45,24 @@ function paths (resource) {
   Object.keys(resource).map(method => {
     const target = resource[method]
     const type = typeof target
-    if (type === 'function') {
-      options['/'] = (options['/'] || [])
-      options['/'].push(method)
-    } else if (type === 'object') {
-      Object.keys(target).map(path => {
-        options[path] = (options[path] || [])
-        options[path].push(method)
-      })
-    }
+    const add = push.bind(null, options, method)
+    if (type === 'function') add('/')
+    else if (type === 'object') Object.keys(target).map(add)
   })
   return options
+}
+
+
+/**
+ * Push method path into options object.
+ *
+ * @param {Object} options
+ * @param {String} method
+ * @param {String} path
+ * @api private
+ */
+
+function push (options, method, path) {
+  options[path] = (options[path] || [])
+  options[path].push(method)
 }
