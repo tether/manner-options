@@ -8,6 +8,8 @@
 module.exports = function (resource) {
   return {
     ...resource,
-    options: () => {}
+    options: {
+      '/': () => {}
+    }
   }
 }
