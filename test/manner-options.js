@@ -35,6 +35,9 @@ test('should create one OPTIONS handler per path', assert => {
     post: {
       '/': () => {},
       '/:name': () => {}
+    },
+    put: {
+      '/:name': () => {}
     }
   })
   assert.equal(typeof obj.options, 'object')
