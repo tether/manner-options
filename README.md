@@ -5,6 +5,7 @@
 [![Downloads](https://img.shields.io/npm/dm/manner-options.svg)](http://npm-stat.com/charts.html?package=manner-options)
 [![guidelines](https://tether.github.io/contribution-guide/badge-guidelines.svg)](https://github.com/tether/contribution-guide)
 
+
 Generate the communication options for a target resource. Core module of the [manner](https://github.com/tether/manner) framework.
 
 ## Usage
