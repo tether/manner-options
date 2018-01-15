@@ -5,8 +5,9 @@
  * @api public
  */
 
-module.exports = function () {
-  // do something
+module.exports = function (resource) {
+  return {
+    ...resource,
+    options: () => {}
+  }
 }
-
-  
