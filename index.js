@@ -12,10 +12,8 @@
 
 module.exports = function (resource, schema) {
   const options = paths(resource)
-  return {
-    ...resource,
-    options: describe(paths(resource, schema))
-  }
+  resource.options = describe(paths(resource, schema))
+  return resource
 }
 
 
