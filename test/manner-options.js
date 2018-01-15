@@ -4,10 +4,14 @@
  */
 
 const test = require('tape')
+const options = require('..')
 
-test('this is an example', assert => {
+
+test('should add options communication for simple HTTP resource', assert => {
   assert.plan(1)
-  assert.equal(1 + 2, 3)
-})
+  const obj = options({
+    get: () => {}
+  })
 
-  
+  assert.equal(typeof obj.options, 'function')
+})
